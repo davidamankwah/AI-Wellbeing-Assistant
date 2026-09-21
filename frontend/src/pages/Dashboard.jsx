@@ -1,4 +1,5 @@
 function Dashboard(){
+    // Display the dashboard page
     return(
         <div>
             <h1> Dashboard</h1>

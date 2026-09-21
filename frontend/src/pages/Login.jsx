@@ -45,7 +45,7 @@ function Login() {
           }
         }
     }
-    
+    // Display the login page
     return(
         <div>
             <h1>Login Account</h1>

@@ -2,42 +2,50 @@ import { useState } from "react";
 import {useNavigate} from "react-router-dom";
 import api from "../services/api";
 
+// Register component
 function Register() {
-    const navigate = useNavigate();
-
+    const navigate = useNavigate(); // navigates to different pages
+     
+    // Stores the values entered into the registration form
     const [formData, setFormData] = useState ({
         username: "",
         email: "",
         password: "",
     });
 
+     // Stores a successful and error messages
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
 
+     // Runs whenever the user types into an input field
     function handleChange(event) {
         setFormData({
             ...formData,
             [event.target.name]: event.target.value,
         });
     }
-
+     // Runs when the registration form is submitted
     async function handleSubmit(event){
         event.preventDefault();
 
+        // Clear any previous messages
         setMessage("");
         setError("");
 
         try{
+            // Send the form data to the backend registration endpoint
             await api.post("/register", formData);
 
-            setMessage("RRegistration successful! You can now log in.");
+            setMessage("RRegistration successful! You can now log in.");  // Display a success message
 
+            // Clear the form after successful registration
             setFormData({
                 username: "",
                 email: "",
                 password: "",
             });
 
+             // Wait 1.5 seconds before moving to the login page
             setTimeout(() => {
                 navigate("/login");
             }, 1500);
@@ -51,7 +59,7 @@ function Register() {
             }
         }
     }
-
+    // Display the registration page
     return(
         <div>
             <h1>Create an Account</h1>
