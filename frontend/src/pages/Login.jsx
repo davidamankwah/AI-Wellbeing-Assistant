@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import api from "../services/api";
+import "../styles/style.css";
 
 function Login() {
     const navigate = useNavigate();
@@ -11,8 +12,9 @@ function Login() {
     });
 
     const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
 
-    function handleChange(event){
+    function handleChange(event) {
         setFormData({
             ...formData,
             [event.target.name]: event.target.value,
@@ -23,6 +25,8 @@ function Login() {
         event.preventDefault();
 
         setError("");
+        setLoading(true);
+
         try {
             const response = await api.post("/login", formData);
 
@@ -34,56 +38,94 @@ function Login() {
             navigate("/dashboard");
 
         } catch (error) {
-          if (error.response) {
-            setError(
-                error.response.data.detail || "Login Failed."
-            );
-          } else {
-            setError(
-                "Unable to connect to the backend"
-            );
-          }
+            if (error.response) {
+                setError(
+                    error.response.data.detail || "Login Failed."
+                );
+            } else {
+                setError("Unable to connect to the backend");
+            }
+        } finally {
+            setLoading(false);
         }
     }
-    // Display the login page
-    return(
-        <div>
-            <h1>Login Account</h1>
 
-            <form onSubmit={handleSubmit}>
-              <div>
-                <label>Username</label>
-                <br />
-                <input 
-                type="text"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
-                required
-                />
-                </div>  
-                <br />
+    // Display the styled login page
+    return (
+        <div className="auth-page">
+            <div className="auth-card">
 
-                <div>
-                  <label>Password</label>
-                  <br />
-                    <input 
-                    type="password"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                />
+                <div className="auth-logo">
+                    Mental Wellbeing Assistant
                 </div>
 
-                <br />
+                <h1>Good to have you back!</h1>
 
-                <button type="submit">
-                    Login
-                </button>
-            </form>
+                <p className="auth-subtitle">
+                    Continue with your well-being journey 
+                    by logging in to your account.
+                </p>
 
-            {error && <p>{error}</p>}
+                {error && (
+                    <p className="error-message" role="alert">
+                        {error}
+                    </p>
+                )}
+
+                <form onSubmit={handleSubmit}>
+
+                    <div className="form-group">
+                        <label htmlFor="username">
+                            Username
+                        </label>
+
+                        <input
+                            id="username"
+                            type="text"
+                            name="username"
+                            placeholder="Enter your username"
+                            value={formData.username}
+                            onChange={handleChange}
+                            autoComplete="username"
+                            required
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="password">
+                            Password
+                        </label>
+
+                        <input
+                            id="password"
+                            type="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            autoComplete="current-password"
+                            required
+                        />
+                    </div>
+
+                    <button
+                        type="submit"
+                        className="primary-button"
+                        disabled={loading}
+                    >
+                        {loading ? "Logging in..." : "Login"}
+                    </button>
+
+                </form>
+
+                <p className="auth-footer">
+                    Don't have an account?{" "}
+                    <Link to="/register">
+                     Create an account
+                    </Link>
+                </p>
+
+            </div>
         </div>
     );
 }
