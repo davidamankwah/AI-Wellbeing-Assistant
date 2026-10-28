@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr, ConfigDict
+from pydantic import BaseModel, EmailStr, ConfigDict,Field
 
 #schema used when creating/registering a new user
 class UserCreate(BaseModel):
@@ -23,4 +23,12 @@ class UserResponse(BaseModel):
 class Token(BaseModel):
     access_token: str
     token_type: str
-  
+
+# Student request for chat sent
+class ChatRequest(BaseModel):
+    message: str = Field(min_length=1, max_length=2000)
+
+#The response is given by FastAPI.
+class ChatResponse(BaseModel):
+    response: str
+    status: str

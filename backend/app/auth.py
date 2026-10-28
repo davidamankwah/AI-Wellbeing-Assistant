@@ -1,9 +1,17 @@
+#imports
 import os
 from passlib.context import CryptContext
 from datetime import datetime, timedelta, timezone
 
 from dotenv import load_dotenv
 from jose import jwt, JWTError
+
+from fastapi import Depends, HTTPException
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from sqlalchemy.orm import Session
+
+from app.database import get_db
+
 
 load_dotenv() # read the environment variables stored inside the .env file.
 
@@ -70,4 +78,43 @@ def verify_access_token(token: str):
     # return none to show invalid token.
     except JWTError:
         return None
+
+# Extracting Bearer Token Credentials from Incoming Requests
+security = HTTPBearer()
+
+def require_user(
+        credentials: HTTPAuthorizationCredentials = Depends(security),
+        db: Session = Depends(get_db)
+):
+
+   #Get the JWT token
+   token = credentials.credentials
+
+   user_id = verify_access_token(token)
+
+   if user_id is None:
+       raise HTTPException(
+           status_code=401,
+           detail="Invalid or expired token"
+       )
    
+   try:
+       user_id = int(user_id)
+   except (ValueError, TypeError):
+       raise HTTPException(
+           status_code=401,
+           detail="Invalid token user ID"
+       )
+
+   from app import crud
+   # Get the verified user
+   user = crud.get_user_by_id(db, user_id)
+
+   if user is None:
+       raise HTTPException(
+           status_code=401,
+           detail="User is no more"
+       )
+
+   return user
+

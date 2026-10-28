@@ -6,6 +6,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.database import Base, engine, get_db
 from app import models, schemas, crud
 from app.auth import verify_password, create_access_token, verify_access_token
+from app.routers import chat
+
 
 # create the FastAPI application
 app = FastAPI(
@@ -23,6 +25,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(chat.router)
 
 security = HTTPBearer() # HTTPBearer useed for authorization header
 
