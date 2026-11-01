@@ -8,12 +8,15 @@ MAX_MESSAGE_LENGTH = 2000
 SAFETY_PATTERN = [
     r"\bkill myself\b",
     r"\bend my life\b",
-    r"\bhurt myself\b",
-    r"\bsuicidal\b",
-    r"\bself[- ]harm\b",
-    r"\boverdose\b",
-    r"\bhurt someone\b",
-    r"\bkill someone\b",
+    r"\bhurt(?:ing)? myself\b",
+    r"\bharm(?:ing)? myself\b",
+    r"\bsuicid(?:e|al)\b",
+    r"\bself[- ]harm(?:ing)?\b",
+    r"\boverdos(?:e|ing)\b",
+    r"\bhurt(?:ing)? someone\b",
+    r"\bkill(?:ing)? someone\b",
+    r"\btake my own life\b",
+    r"\bdon't want to (?:live|be alive) anymore\b",
 ]
 
 # Identify some typical prompt injection attacks.

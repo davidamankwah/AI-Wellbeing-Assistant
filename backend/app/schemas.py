@@ -1,4 +1,6 @@
 from pydantic import BaseModel, EmailStr, ConfigDict,Field
+from enum import Enum
+
 
 #schema used when creating/registering a new user
 class UserCreate(BaseModel):
@@ -32,3 +34,17 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     response: str
     status: str
+
+class RiskLevel(str, Enum):
+    LOW = "LOW"
+    MEDIUM = "MEDIUM"
+    HIGH = "HIGH"
+
+class MessageClassification(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    wellbeing_scope: bool
+    safeguarding_risk: RiskLevel
+    prompt_injection: bool
+    clinical_request: bool
+    risk_reason: str = Field(min_length=1, max_length=500)
