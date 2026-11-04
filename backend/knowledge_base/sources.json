@@ -1,0 +1,65 @@
+[
+  {
+    "id": "cccu-managing-studies",
+    "title": "Understanding and managing your studies",
+    "source": "Canterbury Christ Church University",
+    "url": "https://students.canterbury.ac.uk/learning-skills-hub/understanding-and-managing-your-studies",
+    "verified": true,
+    "verified_date": "2026-11-04",
+    "content": "University study and balancing work, family and other commitments can feel overwhelming. Plan independent study and manage your time realistically. For academic worries, contact your Personal Academic Tutor; CCCU's Student Wellbeing and Support Team can also help when studying affects your wellbeing."
+  },
+  {
+    "id": "cccu-mental-health-support",
+    "title": "Mental health and wellbeing",
+    "source": "Canterbury Christ Church University",
+    "url": "https://students.canterbury.ac.uk/support/disability-and-mental-health/mental-health-and-wellbeing",
+    "verified": true,
+    "verified_date": "2026-11-04",
+    "content": "CCCU students feeling anxious, overwhelmed, low or unable to adjust to university can contact the Student Wellbeing and Support Team for confidential mental health advice and counselling. Contact Student Zone at studentzone@canterbury.ac.uk. The university also lists Spectrum.Life for free out-of-hours wellbeing support by phone or online. The team does not provide medical treatment."
+  },
+  {
+    "id": "cccu-exam-anxiety",
+    "title": "Exams",
+    "source": "Canterbury Christ Church University",
+    "url": "https://students.canterbury.ac.uk/learning-skills-hub/exams",
+    "verified": true,
+    "verified_date": "2026-11-04",
+    "content": "Exam anxiety and revision stress are common. CCCU recommends identifying exam dates and topics, creating a realistic revision timetable, using active techniques such as flashcards or practice questions, and taking short breaks. Students can discuss exam worries with their tutor, Personal Academic Tutor or university support services."
+  },
+  {
+    "id": "nhs-student-stress",
+    "title": "Student stress",
+    "source": "NHS",
+    "url": "https://www.nhs.uk/mental-health/children-and-young-adults/help-for-teenagers-young-adults-and-students/student-stress-self-help-tips/",
+    "verified": true,
+    "verified_date": "2026-11-04",
+    "content": "University students may feel stressed by exams, coursework deadlines, money, housing or relationships. NHS advice includes identifying the cause, breaking tasks into manageable steps, planning time, maintaining sleep and physical activity, relaxing, and talking with trusted people. If stress is hard to manage or affects everyday life or university work, consider speaking with a GP or university support service."
+  },
+  {
+    "id": "nhs-loneliness",
+    "title": "Feeling lonely",
+    "source": "NHS",
+    "url": "https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/feelings-and-symptoms/feeling-lonely/",
+    "verified": true,
+    "verified_date": "2026-11-04",
+    "content": "Loneliness can occur after moving to university or when social connections change. NHS suggestions include talking with someone trusted, joining a group or class, trying peer support, volunteering and setting small social goals. If loneliness is accompanied by persistent low mood, anxiety or difficulty coping, contact a GP or consider NHS talking therapies."
+  },
+  {
+    "id": "nhs-sleep-problems",
+    "title": "Sleep problems",
+    "source": "NHS Every Mind Matters",
+    "url": "https://www.nhs.uk/every-mind-matters/mental-health-issues/sleep/",
+    "verified": true,
+    "verified_date": "2026-11-04",
+    "content": "Poor sleep can affect concentration, mood and daily functioning. Stress and worry, irregular routines, caffeine and uncomfortable sleeping conditions can contribute. NHS advice includes keeping regular sleep and waking times, relaxing before bed, reducing late caffeine and making the bedroom comfortable. Speak to a GP if sleep problems continue or may be insomnia."
+  },
+  {
+    "id": "nhs-managing-stress",
+    "title": "Stress",
+    "source": "NHS Every Mind Matters",
+    "url": "https://www.nhs.uk/every-mind-matters/mental-health-issues/stress/",
+    "verified": true,
+    "verified_date": "2026-11-04",
+    "content": "Stress can arise when demands feel greater than the resources available to manage them. NHS Every Mind Matters suggests talking with trusted people, dividing large tasks into smaller steps, planning ahead, staying physically active and exploring self-help techniques. People experiencing ongoing difficulty coping may need additional professional support."
+  }
+]

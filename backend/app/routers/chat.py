@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
-
+from app.services.risk_level import classify_message
+from app.services.response_controller import control_response
 from app import schemas
 from app.auth import require_user
 from app.services.input_validator import validate_message
@@ -24,13 +25,14 @@ def send_message(
             detail=validation.error
         )
 
-    # Do not generate LLM responses yet.
-    # All accepted messages still need contextual classification
-    # and backend-controlled safeguarding.
+   # Stage 4: LLM Call 1 - Contextual classification
+    classification = classify_message(validation)
+
+    # Stage 5: Backend-controlled safeguarding and routing
+    decision = control_response(classification)
+
+    # Return only the controlled response to the student
     return {
-        "response": (
-            "Your message has been received. "
-            "The wellbeing response system is still under development."
-        ),
-        "status": "prototype"
+        "response": decision.response,
+        "status": decision.route.value
     }
