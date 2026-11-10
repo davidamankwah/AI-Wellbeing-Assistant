@@ -1,4 +1,3 @@
-
 from dataclasses import dataclass
 from enum import Enum
 
@@ -73,9 +72,15 @@ def control_response(
 
     The classifier provides information, but Python
     decides which pathway is allowed.
+
+    Priority:
+    HIGH > CLINICAL > INJECTION > MEDIUM >
+    OUT_OF_SCOPE > LOW
     """
 
     # Priority 1: HIGH-risk safeguarding
+    # Always return a predefined safety response.
+    # Never send HIGH-risk messages to LLM Call 2.
     if classification.safeguarding_risk == RiskLevel.HIGH:
         return ControllerResult(
             route=ResponseRoute.HIGH,
@@ -83,15 +88,9 @@ def control_response(
             requires_llm=False
         )
 
-    # Priority 2: MEDIUM-risk safeguarding
-    if classification.safeguarding_risk == RiskLevel.MEDIUM:
-        return ControllerResult(
-            route=ResponseRoute.MEDIUM,
-            response=MEDIUM_PLACEHOLDER,
-            requires_llm=False
-        )
-
-    # Priority 3: Clinical boundary
+    # Priority 2: Clinical boundary
+    # Prevent diagnosis, medication, and treatment
+    # requests from reaching normal LLM generation.
     if classification.clinical_request:
         return ControllerResult(
             route=ResponseRoute.CLINICAL,
@@ -99,7 +98,9 @@ def control_response(
             requires_llm=False
         )
 
-    # Priority 4: Prompt injection
+    # Priority 3: Prompt injection
+    # Reject attempts to override system instructions
+    # before considering LLM-generated responses.
     if classification.prompt_injection:
         return ControllerResult(
             route=ResponseRoute.INJECTION,
@@ -107,7 +108,18 @@ def control_response(
             requires_llm=False
         )
 
+    # Priority 4: MEDIUM-risk safeguarding
+    # Route significant distress to the restricted
+    # response pathway.
+    if classification.safeguarding_risk == RiskLevel.MEDIUM:
+        return ControllerResult(
+            route=ResponseRoute.MEDIUM,
+            response=MEDIUM_PLACEHOLDER,
+            requires_llm=False
+        )
+
     # Priority 5: Out-of-scope messages
+    # Redirect unrelated requests to wellbeing topics.
     if not classification.wellbeing_scope:
         return ControllerResult(
             route=ResponseRoute.OUT_OF_SCOPE,
@@ -116,6 +128,7 @@ def control_response(
         )
 
     # Priority 6: LOW-risk wellbeing messages
+    # Allow the standard wellbeing response pathway.
     return ControllerResult(
         route=ResponseRoute.LOW,
         response=LOW_PLACEHOLDER,

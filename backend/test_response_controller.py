@@ -81,6 +81,7 @@ test_cases = [
         ),
         "HIGH"
     ),
+    
     (
         "MEDIUM + Clinical - Priority test",
         MessageClassification(
@@ -89,9 +90,10 @@ test_cases = [
             prompt_injection=False,
             clinical_request=True,
             risk_reason="Distress with diagnosis request."
-        ),
-        "MEDIUM"
     ),
+    "CLINICAL"
+),
+
 ]
 
 

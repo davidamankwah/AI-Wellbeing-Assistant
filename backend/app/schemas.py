@@ -30,10 +30,20 @@ class Token(BaseModel):
 class ChatRequest(BaseModel):
     message: str = Field(min_length=1, max_length=2000)
 
-#The response is given by FastAPI.
+class ChatSource(BaseModel):
+    """Reference retrieved from the local knowledge base."""
+
+    id: str
+    title: str
+    publisher: str
+    url: str | None = None
+
 class ChatResponse(BaseModel):
+    """Response returned by the /chat endpoint."""
+
     response: str
     status: str
+    sources: list[ChatSource] = Field(default_factory=list)
 
 class RiskLevel(str, Enum):
     LOW = "LOW"
