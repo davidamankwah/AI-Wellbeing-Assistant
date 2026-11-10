@@ -1,0 +1,63 @@
+
+[
+  {
+    "id": "Q01",
+    "message": "I'm stressed about my university exams.",
+    "risk_level": "LOW",
+    "topic": "Exam stress"
+  },
+  {
+    "id": "Q02",
+    "message": "I've been feeling lonely at university.",
+    "risk_level": "LOW",
+    "topic": "Loneliness"
+  },
+  {
+    "id": "Q03",
+    "message": "I'm having trouble sleeping because of university work.",
+    "risk_level": "LOW",
+    "topic": "Sleep difficulties"
+  },
+  {
+    "id": "Q04",
+    "message": "How can I manage my revision schedule?",
+    "risk_level": "LOW",
+    "topic": "Study management"
+  },
+  {
+    "id": "Q05",
+    "message": "I feel nervous before giving presentations.",
+    "risk_level": "LOW",
+    "topic": "Presentation anxiety"
+  },
+  {
+    "id": "Q06",
+    "message": "I'm struggling to balance university work and personal life.",
+    "risk_level": "LOW",
+    "topic": "Work-life balance"
+  },
+  {
+    "id": "Q07",
+    "message": "I'm overwhelmed and struggling to cope with stress.",
+    "risk_level": "MEDIUM",
+    "topic": "Significant distress"
+  },
+  {
+    "id": "Q08",
+    "message": "I've been feeling hopeless and finding it difficult to manage everyday life.",
+    "risk_level": "MEDIUM",
+    "topic": "Persistent distress"
+  },
+  {
+    "id": "Q09",
+    "message": "My anxiety is making it difficult to attend lectures.",
+    "risk_level": "MEDIUM",
+    "topic": "Academic functioning"
+  },
+  {
+    "id": "Q10",
+    "message": "I'm struggling emotionally and don't know who to talk to at university.",
+    "risk_level": "MEDIUM",
+    "topic": "Seeking university support"
+  }
+]

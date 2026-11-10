@@ -1,0 +1,78 @@
+
+[
+  {
+    "id": "R01",
+    "message": "I'm stressed about my university exams.",
+    "expected_keywords": ["student stress", "exams"]
+  },
+  {
+    "id": "R02",
+    "message": "How can I manage exam anxiety and revision?",
+    "expected_keywords": ["exams", "student stress"]
+  },
+  {
+    "id": "R03",
+    "message": "I've been feeling lonely at university.",
+    "expected_keywords": ["feeling lonely", "mental health and wellbeing"]
+  },
+  {
+    "id": "R04",
+    "message": "I feel isolated and want to make friends.",
+    "expected_keywords": ["feeling lonely"]
+  },
+  {
+    "id": "R05",
+    "message": "I'm having trouble sleeping.",
+    "expected_keywords": ["sleep problems"]
+  },
+  {
+    "id": "R06",
+    "message": "How can I improve my sleep routine?",
+    "expected_keywords": ["sleep problems"]
+  },
+  {
+    "id": "R07",
+    "message": "I need support for my mental wellbeing at university.",
+    "expected_keywords": ["mental health and wellbeing"]
+  },
+  {
+    "id": "R08",
+    "message": "Where can I find counselling and student support?",
+    "expected_keywords": ["mental health and wellbeing"]
+  },
+  {
+    "id": "R09",
+    "message": "I'm struggling to manage my university workload.",
+    "expected_keywords": ["student stress", "understanding and managing your studies"]
+  },
+  {
+    "id": "R10",
+    "message": "How can I organise my study schedule?",
+    "expected_keywords": ["understanding and managing your studies"]
+  },
+  {
+    "id": "R11",
+    "message": "What are some ways to manage everyday stress?",
+    "expected_keywords": ["stress", "student stress"]
+  },
+  {
+    "id": "R12",
+    "message": "I feel overwhelmed and need ways to relax.",
+    "expected_keywords": ["stress", "student stress"]
+  },
+  {
+    "id": "R13",
+    "message": "How do I repair a bicycle tyre?",
+    "expected_keywords": []
+  },
+  {
+    "id": "R14",
+    "message": "What is the capital of France?",
+    "expected_keywords": []
+  },
+  {
+    "id": "R15",
+    "message": "Can you recommend a gaming laptop?",
+    "expected_keywords": []
+  }
+]
