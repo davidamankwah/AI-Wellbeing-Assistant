@@ -26,12 +26,19 @@ class ControllerResult:
 # Review and approve crisis wording and contact details
 # with the supervisor before student-facing deployment.
 HIGH_RISK_RESPONSE = (
-    "I'm sorry you're dealing with something that may be "
-    "putting your safety at risk. You deserve support. "
-    "If you are in immediate danger in the UK, call 999 "
-    "or go to your nearest A&E department. "
-    "You can also contact NHS 111 for urgent health advice. "
-    "If possible, reach out to someone you trust."
+    "I'm sorry you're experiencing something that may "
+    "put your safety at risk. You deserve support. "
+    "If you or someone else is in immediate danger, "
+    "or you cannot keep yourself safe, call 999 or "
+    "go to A&E now. "
+    "If you need urgent mental health help in England "
+    "but it is not an immediate emergency, call NHS 111 "
+    "and select the mental health option, or request "
+    "an urgent GP appointment. "
+    "If possible, reach out to someone you trust. "
+    "NHS guidance: "
+    "https://www.nhs.uk/nhs-services/mental-health-services/"
+    "where-to-get-urgent-help-for-mental-health/"
 )
 
 MEDIUM_PLACEHOLDER = (
@@ -46,10 +53,17 @@ LOW_PLACEHOLDER = (
 )
 
 CLINICAL_RESPONSE = (
-    "This assistant cannot diagnose mental health conditions "
-    "or recommend medication changes. Please speak with a "
-    "qualified healthcare professional, such as your GP, "
-    "for personalised medical guidance."
+    "I can provide general wellbeing information, "
+    "but I cannot diagnose mental health conditions, "
+    "prescribe medication or recommend treatment changes. "
+    "A GP or qualified mental health professional can "
+    "discuss your symptoms and help you access appropriate "
+    "assessment and support. "
+    "In England, eligible people can also refer themselves "
+    "to NHS talking therapies. "
+    "NHS guidance: "
+    "https://www.nhs.uk/mental-health/social-care-and-your-rights/"
+    "how-to-access-mental-health-services/"
 )
 
 INJECTION_RESPONSE = (

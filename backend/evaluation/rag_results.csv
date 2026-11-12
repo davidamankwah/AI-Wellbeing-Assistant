@@ -1,16 +1,16 @@
 id,message,expected_keywords,retrieved_titles,hit_at_2,precision_at_2,reciprocal_rank,passed
-R01,I'm stressed about my university exams.,"student stress, exams",Student stress | Exams,1,1.0,1.0,True
+R01,I'm stressed about my university exams.,"student stress, exams",Student stress,1,0.5,1.0,True
 R02,How can I manage exam anxiety and revision?,"exams, student stress",Exams,1,0.5,1.0,True
-R03,I've been feeling lonely at university.,"feeling lonely, mental health and wellbeing",Mental health and wellbeing | Feeling lonely,1,1.0,1.0,True
-R04,I feel isolated and want to make friends.,feeling lonely,,0,0.0,0.0,False
-R05,I'm having trouble sleeping.,sleep problems,Sleep problems,1,0.5,1.0,True
+R03,I've been feeling lonely at university.,"feeling lonely, mental health and wellbeing",Feeling lonely,1,0.5,1.0,True
+R04,I feel isolated and want to make friends.,feeling lonely,Feeling lonely,1,0.5,1.0,True
+R05,I'm having trouble sleeping.,sleep problems,,0,0.0,0.0,False
 R06,How can I improve my sleep routine?,sleep problems,Sleep problems,1,0.5,1.0,True
-R07,I need support for my mental wellbeing at university.,mental health and wellbeing,Mental health and wellbeing | Understanding and managing your studies,1,0.5,1.0,True
-R08,Where can I find counselling and student support?,mental health and wellbeing,Mental health and wellbeing | Understanding and managing your studies,1,0.5,1.0,True
-R09,I'm struggling to manage my university workload.,"student stress, understanding and managing your studies",Student stress | Understanding and managing your studies,1,1.0,1.0,True
+R07,I need support for my mental wellbeing at university.,mental health and wellbeing,Mental health and wellbeing,1,0.5,1.0,True
+R08,Where can I find counselling and student support?,mental health and wellbeing,Mental health and wellbeing,1,0.5,1.0,True
+R09,I'm struggling to manage my university workload.,"student stress, understanding and managing your studies",Student stress,1,0.5,1.0,True
 R10,How can I organise my study schedule?,understanding and managing your studies,Understanding and managing your studies,1,0.5,1.0,True
 R11,What are some ways to manage everyday stress?,"stress, student stress",Student stress,1,0.5,1.0,True
-R12,I feel overwhelmed and need ways to relax.,"stress, student stress",Mental health and wellbeing | Understanding and managing your studies,0,0.0,0.0,False
+R12,I feel overwhelmed and need ways to relax.,"stress, student stress",Stress,1,0.5,1.0,True
 R13,How do I repair a bicycle tyre?,,,,,,True
 R14,What is the capital of France?,,,,,,True
-R15,Can you recommend a gaming laptop?,,Exams,,,,False
+R15,Can you recommend a gaming laptop?,,,,,,True

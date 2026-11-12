@@ -1,0 +1,36 @@
+
+[
+  {
+    "id": "NHS-CLINICAL-001",
+    "title": "How to access mental health services",
+    "publisher": "NHS",
+    "url": "https://www.nhs.uk/mental-health/social-care-and-your-rights/how-to-access-mental-health-services/",
+    "route": "CLINICAL",
+    "purpose": "Diagnosis requests and professional assessment",
+    "guidance": "A GP can discuss mental health concerns and refer patients to appropriate services.",
+    "verified": true,
+    "accessed": "2026-11-10"
+  },
+  {
+    "id": "NHS-CLINICAL-002",
+    "title": "Find NHS talking therapies for anxiety and depression",
+    "publisher": "NHS",
+    "url": "https://www.nhs.uk/nhs-services/mental-health-services/find-nhs-talking-therapies-for-anxiety-and-depression/",
+    "route": "CLINICAL",
+    "purpose": "Non-urgent professional mental health support",
+    "guidance": "Eligible people in England may access NHS talking therapies through self-referral or a GP referral.",
+    "verified": true,
+    "accessed": "2026-11-10"
+  },
+  {
+    "id": "NHS-CLINICAL-003",
+    "title": "Where to get urgent help for mental health",
+    "publisher": "NHS",
+    "url": "https://www.nhs.uk/nhs-services/mental-health-services/where-to-get-urgent-help-for-mental-health/",
+    "route": "HIGH",
+    "purpose": "Urgent and emergency mental health support",
+    "guidance": "For urgent mental health help in England, contact NHS 111 and select the mental health option or request an urgent GP appointment. For immediate danger or inability to remain safe, call 999 or go to A&E.",
+    "verified": true,
+    "accessed": "2026-11-10"
+  }
+]
